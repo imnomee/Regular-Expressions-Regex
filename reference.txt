@@ -1,0 +1,248 @@
+http://regexpal.com.s3-website-us-east-1.amazonaws.com/?_ga=2.249565263.813004562.1495485737-848749570.1493938714
+https://regex101.com/
+
+https://en.wikipedia.org/wiki/Regular_expression
+
+
+lady ?bugs?
+//select following
+ladybug
+ladybugs
+lady bugs
+
+
+la[dz]y ?[bl]ugs?
+ladybug
+lady bugs
+lazy bug
+lazy lug
+
+[hl]a[dz]y ?s?[bl]ugs?
+ladybug
+lazy lug
+lazy slug
+hazy slug
+
+[fl]ad[yi]n?g? ?[br]ug!?
+ladybug
+fading rug!
+
+[A-Za-z]oy[ -]?boats?
+toyboat
+toyboats
+toy boats
+Toy boats
+joy boats
+zoy-boats
+toy-boats
+Soy boats
+soy-boats
+
+[a-z]a[st][at]?
+bat
+cat
+data
+eat
+fast
+
+[1-9] [ab]
+1 a
+2 a
+3 a
+4 a
+5 a
+8 a
+9 b
+
+[0-9][0-9][0-9][0-9] [A-Z]able
+8345 Gable
+7238 Gable
+2349 Table
+8475 Cable
+0994 Fable
+1047 Zable
+
+[0-9][0-9][0-9][0-9][0-9]?
+4849
+4472
+4901
+40502
+43470
+40496
+
+[0-9] = \d digit - \D not digit
+[A-Za-z0-9_] = \w word - \W not word
+[ \t\r\n\f] = \s white space - \S not whitespace
+any character = .
+
+
+\w [A-Za-z]oy[\s-]?boat.?
+a toyboat
+9 toyboats
+8 toy	boats
+3 Toy
+boats
+7 joy boat£
+6 joy-boat$
+
+\d = will select all the numbers only and leave the characters
+7849
+3472
+8901
+70502
+23470
+90496
+abcde
+ABCDE
+
+
+\d [ab] = will select all the numbers with lower [ab]
+1 a
+2 a
+3 a
+4 a
+5 a
+8 a
+9 b
+4 c
+4 E
+
+
+\d\d\d\d [A-Z]able = will select all numbers with upper A-Z
+8345 Gable
+7238 Gable
+2349 Table
+8475 Cable
+0994 Fable
+1047 Zable
+5633 gable
+jklh 3able
+
+
+\w = will select all the characters and numbers with underscore but leave special characters
+bat
+cat
+data
+eat
+fast
+12_6
+
+$%#$@
+
+0 or more = *
+1 or more = +
+
+
+REPETITION
+Three = {3} 
+Three or more = {3,}
+between Three and five = {3, 5}
+
+\d{3}-\d{2}-\d{4}
+000-35-5268
+000-45-5454
+
+
+\w{5,9} = any word between 5 to 9 characters select it
+E4763GHC
+7896TOB3P
+L0003
+
+
+
+\d \w+ = select any starting with digit and have at least one word
+8 pieces
+7 piece
+6 pieces
+5 pieces
+4 pieces
+
+
+
+\d\s\w+\s?\w+ OR \d\s\w*\s?\w*
+8 pieces
+7 piece
+6 pieces
+5 pieces
+4 pieces
+2 pie slices
+
+\d* = select all the digits following * number of digits
+1234
+5678
+84753
+78930
+
+
+\d+\w*
+
+123abc
+333cats
+821_Plants
+769___
+
+
+EXCLUDE CHARACTERS
+[^]
+[^@] = exclude @
+[^@.] = exclue @ and . 
+
+
+[^a] = all except small a
+foxes
+jumping
+dogs
+
+
+google\.(com|net) = selecting .com and .net only
+google.com
+google.net
+google.org
+
+
+(www\.)?google\.(com|net)
+google.com
+google.net
+google.org
+www.google.com
+
+\w+\.(jpg|png|gif)
+img_01.jpg
+img_02.png
+img_03.gif
+img_04.png
+img_05.gif
+img_06.jpg
+
+mov_01.avi
+
+
+pro(je|tra)?ctor
+projector
+protractor
+proctor
+
+prospector
+
+img\w.*
+img_sm_01.jpg
+img_01.jpg
+img_sm_02.jpg
+img_02.jpg
+img_sm_03.jpg
+img_03.jpg
+img_sm_04.png
+img_04.png
+
+
+
+((www.)|(api.)|)(github|teamtreehouse).com
+
+www.github.com
+github.com
+www.teamtreehouse.com
+teamtreehouse.com
+api.github.com
+
+jsfiddle.net
+www.jsfiddle.net
